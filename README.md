@@ -10,7 +10,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist shintio/yii2-proxy-httpclient "*"
+composer require --prefer-dist shintio/yii2-proxy-httpclient "*"
 ```
 
 or add
@@ -21,11 +21,25 @@ or add
 
 to the require section of your `composer.json` file.
 
+Apply migrations by following command:
+```bash
+php yii migrate --migrationPath="vendor/shintio/yii2-proxy-httpclient/src/database/migrations/"
+```
 
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
+Once the extension is installed, simply use it in your code like:
 
 ```php
-<?= \shintio\yii2\proxy\AutoloadExample::widget(); ?>```
+use shintio\yii2\proxy\components\Client;
+
+$client = new Client();
+
+$request = $client->createRequest()->setMethod('get')->setUrl('https://2ip.ru/');
+
+$response = $request->send();
+
+echo $response->content;
+die;
+```
