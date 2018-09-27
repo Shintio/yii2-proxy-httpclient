@@ -1,0 +1,29 @@
+{
+  "name": "shintio/yii2-proxy-httpclient",
+  "description": "Native httpclient with custom or autoparsed free proxy servers",
+  "type": "yii2-extension",
+  "keywords": [
+	"yii2",
+	"extension",
+	"proxy",
+	"curl",
+	"httpclient"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+	{
+	  "name": "Aleksey Fedorenko",
+	  "email": "shintio.afedorenko@gmail.com"
+	}
+  ],
+  "require": {
+	"yiisoft/yii2": "~2.0.0",
+	"yiisoft/yii2-httpclient": "^2.0",
+	"electrolinux/phpquery": "^0.9.6"
+  },
+  "autoload": {
+	"psr-4": {
+	  "shintio\\yii2\\proxy\\": "src/"
+	}
+  }
+}
